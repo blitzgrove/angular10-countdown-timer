@@ -1,0 +1,10 @@
+<ng-container *ngIf="(authService.loginStatus$ | async); else loggedOut">
+  <p>User is logged in. Automatic logout in: {{ countDown }}s</p>
+  <br />
+  <button (mouseup)="logout()">Logout</button>
+</ng-container>
+<ng-template #loggedOut>
+  <p>User is logged out.</p>
+  <br />
+  <button (mouseup)="login()">Login</button>
+</ng-template>
